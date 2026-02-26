@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://block.github.io/goose/"
-  url "https://github.com/block/goose/archive/refs/tags/v1.25.2.tar.gz"
-  sha256 "ea4ba3a74528c3bb07d111b82a818111e886bcf2c32d4003e381a74a29fd42d1"
+  url "https://github.com/block/goose/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "81dd37bd1567f90b59a43ec16e2a13c759107c89b7da7c4dc3dd33e4f9f4a64b"
   license "Apache-2.0"
   head "https://github.com/block/goose.git", branch: "main"
 
@@ -23,6 +23,8 @@ class BlockGooseCli < Formula
   depends_on "pkgconf" => :build
   depends_on "protobuf" => :build # for lance-encoding
   depends_on "rust" => :build
+
+  uses_from_macos "llvm" => :build # for libclang
 
   on_linux do
     depends_on "dbus"
